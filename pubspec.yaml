@@ -1,0 +1,190 @@
+name: mecpl_flutter
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.27+28
+
+environment:  
+  sdk: ^3.10.0
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  google_maps_flutter: ^2.6.0
+  geolocator: ^10.1.0
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  
+  # State Management
+  provider: ^6.1.2
+  
+  # Routing
+  go_router: ^17.0.1
+  
+  # Animations
+  flutter_animate: ^4.5.2
+  lottie: ^3.3.1
+  shimmer: ^3.0.0
+  
+  # UI Components
+  google_fonts: ^8.0.0
+  fl_chart: ^1.1.1
+  iconsax_flutter: ^1.0.0
+  flutter_svg: ^2.0.16
+  cached_network_image: ^3.4.1
+  
+  # Utilities
+  intl: ^0.20.2
+  shared_preferences: ^2.3.5
+  flutter_staggered_animations: ^1.1.1
+  percent_indicator: ^4.2.3
+  table_calendar: ^3.1.3
+  http: ^1.6.0
+  video_player: ^2.8.2
+  path_provider: ^2.1.5
+  open_file: ^3.5.11
+  # Inline native PDF rendering for the payslip preview + full-screen viewer
+  # (Android PdfRenderer / iOS PDFKit). Mobile-only — no web/desktop support.
+  flutter_pdfview: ^1.3.2
+  # System share sheet (WhatsApp, Gmail, Files, etc.) for the payslip Share
+  # button. Uses Share.shareXFiles to attach the cached PDF.
+  share_plus: ^10.1.4
+  image_picker: ^1.0.7
+  # Generic file picker (any MIME type) — used by the Resignation screen's
+  # ATTACHMENT field so users can attach resumes / supporting docs.
+  file_picker: ^8.1.4
+  geocoding: ^2.1.1
+  flutter_polyline_points: ^2.0.0
+
+  # Opens external URLs (EPFO/ESI/UMANG member portals from the Useful Links
+  # screen) in the system browser or default handler.
+  url_launcher: ^6.3.1
+
+  # Background tracking — OS-scheduled periodic task that survives app kill.
+  # Used for the 30-min location pings between punch-in and punch-out.
+  # 0.9.0+3 uses Flutter v2 embedding (the 0.5.2 release was pinned to v1
+  # embedding which current Flutter SDKs no longer ship).
+  workmanager: ^0.9.0+3
+
+  # Device battery level, stamped onto every location ping as `battery_pct`.
+  # The backend stores it per ping (0-100, nullable) so a flat trail can be
+  # told apart from a dead phone.
+  battery_plus: ^6.2.1
+
+  # Biometric / Face ID login. Gates app launch once the user has logged in
+  # once with a password — fingerprint / Face ID / Face Unlock unlock the
+  # stored session on subsequent launches.
+  local_auth: ^2.3.0
+  local_auth_android: ^1.0.38
+  local_auth_darwin: ^1.4.3
+
+  # Device + app metadata sent on login. Backend stores these so the admin
+  # dashboard can show which device a session belongs to and force-logout
+  # individual devices.
+  device_info_plus: ^10.1.0
+  package_info_plus: ^8.0.0
+
+  # Firebase Cloud Messaging — system-tray push notifications (announcements,
+  # leave-approval alerts, etc.). Backend POSTs to FCM with the device token
+  # stored on login; FCM relays to Google Play Services on the device.
+  firebase_core: ^3.6.0
+  firebase_messaging: ^15.1.3
+  # Renders notifications when the app is in the foreground (FCM doesn't
+  # auto-pop the panel notification in that case — we do it ourselves).
+  flutter_local_notifications: ^17.2.3
+  flutter_foreground_task: ^10.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.5
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/
+    - assets/spinner/
+    # Blank statutory claim forms bundled for the Useful Links > Medical
+    # Health Card section (viewed / shared / downloaded in-app).
+    - assets/forms/
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/to/resolution-aware-images
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/to/asset-from-package
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
+
+# Branding Configuration
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/spinner/spinner_logo.png"
+  min_sdk_android: 21
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/spinner/spinner_logo.png
+  android_12:
+    image: assets/spinner/spinner_logo.png
+    color: "#FFFFFF"
+  fullscreen: true

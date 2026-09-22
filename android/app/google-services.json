@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "299428966270",
+    "project_id": "mecpl-hrms",
+    "storage_bucket": "mecpl-hrms.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299428966270:android:9662ec8cf4c93c044b4d2f",
+        "android_client_info": {
+          "package_name": "com.mecpl.hrms"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDelYlAZlKWL5hs03I2xfZozP13k4zgv3c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
